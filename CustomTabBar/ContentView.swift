@@ -41,6 +41,12 @@ struct ContentView: View {
                             .foregroundColor(self.viewRouter.currentView == "home" ? .black : .gray)
                             .onTapGesture {
                                 self.viewRouter.currentView = "home"
+                                if self.showPopUp{
+                                    withAnimation {
+                                        self.showPopUp = false
+                                    }
+                                    
+                                }
                         }
                         
                         
@@ -75,6 +81,11 @@ struct ContentView: View {
                             .foregroundColor(self.viewRouter.currentView == "settings" ? .black : .gray)
                             .onTapGesture {
                                 self.viewRouter.currentView = "settings"
+                                if self.showPopUp{
+                                    withAnimation {
+                                        self.showPopUp = false
+                                    }
+                                }
                         }
                         
                     }
@@ -87,6 +98,11 @@ struct ContentView: View {
         }
     }
 }
+
+
+
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
